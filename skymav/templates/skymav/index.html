@@ -1,0 +1,186 @@
+<!doctype html>
+{% load  staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <link rel="icon" type="image/png" href="{% static 'skymav/img/favicon.ico' %}">
+    <link rel="shortcut icon" href="img/common/favicon.ico">
+
+    <title>SkyMav &ndash; UAV Cloud API</title>
+
+    
+
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+
+
+<!--[if lte IE 8]>
+  
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+  
+<![endif]-->
+<!--[if gt IE 8]><!-->
+  
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+  
+<!--<![endif]-->
+
+
+
+  
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="{% static 'skymav/css/marketing.css' %}">
+    <!--<![endif]-->
+  
+
+
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+
+
+
+</head>
+<body>
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="http://skymav.com"><img src="{% static 'skymav/img/logo.png' %}" alt="skymav"></a>
+
+        <ul>
+            <li class="pure-menu-selected"><a href="#">Home</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Sign Up</a></li>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div class="splash-container">
+    <img src="{% static 'skymav/img/background.png' %}" alt="some_text">
+    <div class="splash">
+        <h1 class="splash-head">The API in the Sky</h1>
+        <p class="splash-subhead">
+            Your UAVs Belong in the Cloud.
+        </p>
+        <p>
+            <a href="/mailgun/" class="pure-button pure-button-primary">Get Connected</a>
+        </p>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">One UAV or an entire fleet, your application is wating.</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    Get Started Quickly
+                </h3>
+                <p>
+                    Plug and Play support for most MavLink compatible Flight Controllers including PX4, Pixhawk and APM and others.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i>
+                    No Limitations
+                </h3>
+                <p>
+                    Using our innovative network bridge your range is only limited by your craft's abilities not the size of your antenna.  
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-th-large"></i>
+                    Secure
+                </h3>
+                <p>
+                    All communications are transmited with AES 256 encryption using randomly generated keys providing the highest security available.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i>
+                    RESTful API
+                </h3>
+                <p>
+                    Easy to use, incredibly powerful. The CloudMav REST API lets you interact with your UAVs from anything that can send an HTTP request.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <img class="pure-img-responsive" alt="File Icons" width="300" src="{% static 'skymav/img/file-icons.png' %}">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">Support at every stage</h2>
+
+            <p>
+                Projects large or small one of our UAV integration experts is available to guide you through the process and get you setup with the right hardware solution to fit your task.
+            </p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2 class="content-head is-center">Ready to go or have some Questions? Sign up or Contact Us</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+
+                        <label for="name">Your Name</label>
+                        <input id="name" type="text" placeholder="Your Name">
+
+
+                        <label for="email">Your Email</label>
+                        <input id="email" type="email" placeholder="Your Email">
+
+
+                        <button type="submit" class="pure-button">Send</button>
+
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Contact Us</h4>
+                <p>
+                    ............
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    ............
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer l-box is-center">
+        © 2014 SkyMav
+    </div>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
