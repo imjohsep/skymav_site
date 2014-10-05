@@ -11,6 +11,6 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "skymav_dev.settings")
 
 from django.core.wsgi import get_wsgi_application
-form dj_static import Cling
+from dj_static import Cling
 
 application = Cling(get_wsgi_application())
