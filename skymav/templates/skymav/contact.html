@@ -74,9 +74,13 @@
 
         <p class="splash-subhead">
             <form action="/" method="post">
+                <div>
                 {% csrf_token %}
-                {{ form }}
+                {% for field in form %}
+                    {{field}}
+                {% endfor %}
                 <br></br>
+                </div>
                 <button type="submit" class="pure-button">Get Connected</button>
             </form>
         </p>
