@@ -43,7 +43,7 @@ def get_name(request):
 
 def mailgun(name, email):
 	sandbox = 'sandbox42328ec0591e42889705c371101ef799.mailgun.org'
-	recipient = 'imjohsep@gmail.com'
+	recipient = 'dev@skymav.com'
 	request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(sandbox)
 	request = requests.post(request_url,
 		auth=("api", 'key-d7f3a1a915b59dc2eec0290e983dfe25'),
