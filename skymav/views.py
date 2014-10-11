@@ -8,7 +8,7 @@ import requests
 # Contact Form 
 class NameForm(forms.Form):
 	your_name = forms.CharField(label='Your name', max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Your name'}))
-	your_email = forms.EmailField(label='Your email', widget=forms.TextInput(attrs={'placeholder': 'Your name'}))
+	your_email = forms.EmailField(label='Your email', widget=forms.TextInput(attrs={'placeholder': 'Your email'}))
 
 # Create your views here.
 def index(request):
