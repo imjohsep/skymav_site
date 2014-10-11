@@ -5,6 +5,7 @@ from django import forms
 
 import requests
 
+# Contact Form 
 class NameForm(forms.Form):
 	your_name = forms.CharField(label='Your name', max_length=100)
 	your_email = forms.EmailField(label='Your email')
@@ -42,7 +43,7 @@ def get_name(request):
 
 def mailgun(name, email):
 	sandbox = 'sandbox42328ec0591e42889705c371101ef799.mailgun.org'
-	recipient = 'dev@skymav.com	'
+	recipient = 'imjohsep@gmail.com'
 	request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(sandbox)
 	request = requests.post(request_url,
 		auth=("api", 'key-d7f3a1a915b59dc2eec0290e983dfe25'),
@@ -57,3 +58,17 @@ def mailgun(name, email):
 
 	return 'successful'
 	# return HttpResponse()
+
+def contact(request):
+	if request.method == 'POST':
+		form = NameForm(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('')
+	else:
+		form = NameForm()
+	return render(request, 'skymav/contact.html', {'form': form})
+
+def documentation(request):
+	context = ''
+	return render(request, 'skymav/documentation.html', context)
+	

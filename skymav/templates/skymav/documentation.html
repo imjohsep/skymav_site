@@ -1,0 +1,84 @@
+<!doctype html>
+{% load  staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact SkyMav">
+    <link rel="icon" type="image/x-icon" href="{% static 'skymav/img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'skymav/img/common/favicon.ico' %}">
+
+    <title>SkyMav &ndash; UAV Cloud API</title>
+
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+
+
+<!--[if lte IE 8]>
+  
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+  
+<![endif]-->
+<!--[if gt IE 8]><!-->
+  
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+  
+<!--<![endif]-->
+
+
+
+  
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="{% static 'skymav/css/marketing.css' %}">
+    <!--<![endif]-->
+  
+
+
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+
+    
+
+</head>
+<body>
+
+
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="http://skymav.com"><img src="{% static 'skymav/img/logo.png' %}" alt="skymav"></a>
+        <ul>
+            <li class="pure-menu-selected"><a href="/">Home</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/contact">Sign Up</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="splash-container">
+                <img src="{% static 'skymav/img/background.png' %}" alt="some_text">
+    <div class="splash">
+        <h1 class="splash-head">API Documentation</h1>
+        <p class="splash-subhead">
+            We are working hard on V1. If you are interested in the beta please sign up!
+        </p>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">One UAV or an entire fleet, your application is being built.</h2>
+     </div>
+
+    <div class="footer l-box is-center">
+        © 2014 SkyMav
+    </div>
+
+</div>
+</body>
+</html>
