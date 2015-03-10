@@ -72,19 +72,18 @@
             Your UAVs Belong in the Cloud.
         </p>
 
-        <p class="splash-subhead">
-            <form action="/" method="post">
-                <div>
+        <form class="pure-form pure-form-stacked" action="/" method="post">
+            <fieldset>
+
                 {% csrf_token %}
                 {% for field in form %}
                     {{field}}
                 {% endfor %}
-                <br></br>
-                </div>
-                <button type="submit" class="pure-button">Get Connected</button>
-            </form>
-        </p>
+                
+                <button type="submit" class="pure-button">Send</button>
 
+            </fieldset>
+        </form>
         
     </div>
 </div>
