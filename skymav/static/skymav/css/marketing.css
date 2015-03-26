@@ -108,6 +108,7 @@ a.pure-button-primary {
     color: white;
     font-weight: 400;
     font-size: 120%;
+    float: left;
 }
 .home-menu .pure-menu-selected a {
     color: white;
@@ -123,6 +124,9 @@ a.pure-button-primary {
     color: #AECFE5;
 }
 
+.home-menu ul {
+    margin-top: 20px;
+}
 
 /*
  * -- SPLASH STYLES --
@@ -219,6 +223,16 @@ a.pure-button-primary {
 }
 
 /*
+ * -- Mobile Shit --
+ */
+
+@media only screen and (max-width: 550px) {
+    .home-menu .pure-menu-heading {
+        float: none;
+    }
+}
+
+/*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some
  * of the mobile styles.
@@ -241,6 +255,7 @@ a.pure-button-primary {
     }
         .home-menu ul {
             float: right;
+            margin-top: 20px;
         }
 
     /* We increase the height of the splash-container */
