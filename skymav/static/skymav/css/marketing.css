@@ -143,6 +143,8 @@ a.pure-button-primary {
     top: 0;
     left: 0;
     position: fixed !important;
+    background-size: cover;
+    background-image: url("/static/skymav/img/background.png");
 }
 
 .splash {
