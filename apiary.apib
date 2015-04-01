@@ -1,0 +1,322 @@
+FORMAT: 1A
+HOST: http://www.skymav.com/v2
+
+# SkyMav
+SkyMav is a RESTful API interface for UAV Applications
+
+# Group Users
+User related resources of the **SkyMav API**
+
+## User Collection [/users]
+
+### List all Users [GET]
++ Response 200 (application/json)
+
+        {
+           "users":[
+              {
+                 "id":"1",
+                 "name":"Jimmy Doolittle",
+                 "href":"api.skymav.com/v2/users/1"
+              },
+              {
+                 "id":"2",
+                 "name":"Orville Wright",
+                 "href":"api.skymav.com/v2/users/2"
+              }
+           ]
+        }
+        
+### Create a user [POST]
++ Request (application/json)
+
+        { 
+            "name": "Jimmy Doolittle",
+            "email": "Jonny@Appleseed.com.co.uk",
+            "password": "1234" 
+        }
+
++ Response 201 (application/json)
+
+        {  
+           "id":"1",
+           "href":"api.skymav.com/v2/users/1"
+        }
+
+## Single User [/users/{id}]
+
+### Get a user [GET]
++ Response 200 (application/json)
+
+        {
+           "user":{
+              "name":"Johnny Appleseed",
+              "email":"johnny@appleseed.com.co.uk",
+              "phone": "415-200-0000"
+              "uavs":[
+                 {
+                    "id":"1",
+                    "href":"api.skymav.com/v2/users/1/uavs/1"
+                 },
+                 {
+                    "id":"2",
+                    "href":"api.skymav.com/v2/users/1/uavs/2"
+                 }
+              ]
+           }
+        }
+
+### Update a user [PUT]
++ Request (application/json)
+    
+        {
+            "phone": "415-200-1000"
+            "email": "johnny@appleseed.com"
+        }
+
++ Response 200 (application/json)
+
+        {
+           "user":{
+              "name":"Johnny Appleseed",
+              "email":"johnny@appleseed.com",
+              "phone": "415-200-1000"
+              "uavs":[
+                 {
+                    "id":"1",
+                    "href":"api.skymav.com/v2/users/1/uavs/1"
+                 },
+                 {
+                    "id":"2",
+                    "href":"api.skymav.com/v2/users/1/uavs/2"
+                 }
+              ]
+           }
+        }
+
+### Delete a user [DELETE]
++ Response 200 (application/json)
+
+        {
+           "user":{
+              "id":"1",
+              "name":"Johnny Appleseed",
+              "status":"deleted"
+           }
+        }
+
+# Group UAVs
+UAV related resources of the **UAV API**
+
+## UAV Collection [/users/{id}/uavs]
+### List all UAVs [GET]
++ Response 200 (application/json)
+
+        {
+           "uavs":[
+              {
+                 "id":1,
+                 "name":"Night Rider",
+                 "type":"quadcopter",
+                 "fliteMode":"loiter"
+              },
+              {
+                 "id":2,
+                 "name":"Gee Bee",
+                 "type":"airplane",
+                 "fliteMode":"loiter"
+              }
+           ]
+        }
+
+### Create a UAV [POST]
++ Request (application/json)
+
+        { 
+            "id": 1,
+            "name": "Night Rider", 
+            "type": "quadcopter" 
+        }
+
++ Response 201 (application/json)
+
+        { 
+            "id": "1"
+            "href":"api.skymav.com/v2/users/1/uavs/1" 
+        }
+
+## Single UAV [/users/{id}/uavs/{id}]
+A single UAV object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the UAV to perform action with. Has example value.
+
+### Retrieve a UAV [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            { 
+                "id": 3, 
+                "name": "Night Rider", 
+                "type": "quadcopter",
+                "fliteMode":"loiter"
+            }
+
+### Remove a UAV [DELETE]
++ Response 200
+
+# Group Waypoints
+## UAV Waypoints [/users/{id}/uavs/{id}/waypoints]
+
+### List Current Waypoints [GET]
++ Response 200 (application/json)
+
+        {
+           "waypoints":[
+              {
+                 "id":1,
+                 "latitude":"1234.1234",
+                 "longitude":"1234.1234",
+                 "altitude":"50"
+              },
+              {
+                 "id":2,
+                 "latitude":"1234.1234",
+                 "longitude":"1234.1234",
+                 "altitude":"50"
+              }
+           ]
+        }
+        
+
+### Add a Single Waypoint [POST]
++ Request (application/json)
+
+        { 
+            "latitude": "1234.1234", 
+            "longitude": "1234.1234", 
+            "altitude": "50" 
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "2"
+            "href":"api.skymav.com/v2/users/1/uavs/1/waypoints/2" 
+        }
+        
+### Delete all Waypoints [DELETE]
++ Response 202 (application/json)
+
+        {
+            "waypoints": "DELETED"
+        }
+
+
+## UAV Waypoint [/users/{id}/uavs/{id}/waypoints/{id}]
+
+### Get waypoint at index [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "2",
+            "latitude": "1234.1234", 
+            "longitude": "1234.1234", 
+            "altitude": "50"
+        }
+        
+### Update a waypont at index [PUT]
++ Request (application/json)
+
+        {
+            "latitude":"1234.1111",
+            "longitude":"1234.1111",
+            "altitude":"50"
+        }
+        
++ Response 200 (application/json)
+
+        {
+           "waypoints":[
+              {
+                 "id":1,
+                 "latitude":"1234.1234",
+                 "longitude":"1234.1234",
+                 "altitude":"50"
+              },
+              {
+                 "id":2,
+                 "latitude":"1234.1111",
+                 "longitude":"1234.1111",
+                 "altitude":"50"
+              }
+           ]
+        }    
+
+### Remove a Waypoint [DELETE]
++ Response 202
+
+
+# Group Systems
+Systems related resources of the **SkyMav API**
+
+## UAV Battery [/users/{id}/uavs/{id}/systems/battery]
+
+### UAV Battery State [GET]
++ Response 200 (application/json)
+
+        { "battery": "90.5" }
+
+## UAV Reboot [/users/{id}/uavs/{id}/systems/reboot]
+
+### System Reboot [GET]
++ Response 202 (application/json)
+    
+        {"system": "rebooting"}
+
+## UAV Packet Loss [/users/{id}/uavs/{id}/systems/packet_loss]
+### System Packet Loss [GET]
++ Response 200 (application/json)
+        
+        {"system": "3"}
+
+## UAV Time Since [/users/{id}/uavs/{id}/systems/time_since/{mtype}]
+### Time Since Mtype [GET]
++ Response 200 (application/json)
+
+        {"system": "3600"}
+        
+## UAV Set Servos [/users/{id}/uavs/{id}/systems/servos]
+### Set pwm on servo channel [POST]
++ Request (application/json)
+
+        {
+            "channel": "7",
+            "pwm": ".5"
+        }
+         
++ Response 200 (application/json)
+        
+        {"": ""}
+
+# Group Modes
+Modes related resources of the **SkyMav API**
+
+## UAV Flightmode [/users/{id}/uavs/{id}/modes]
+
+### Retrieve current flightmode [GET]
++ Response 200 (application/json)
+
+        { "mode": "stabilize" }
+
+### Set mode [POST]
++ Request (application/json)
+
+        { "mode": "loiter" }
+        
++ Response 202 (application/json)
+
+        { "mode": "loiter" }
+
+
